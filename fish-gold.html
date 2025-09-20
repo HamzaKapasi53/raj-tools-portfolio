@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish Gold - Heavy-Duty Drilling Equipment | Raj Tools</title>
+    <meta name="description" content="Explore Fish Gold heavy-duty drilling equipment including SDS hammer drill bits, chisels, and rotary hammers.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/fish-gold.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Raj Tools</h2>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="cycle-plus.html" class="nav-link">Cycle Plus</a>
+                <a href="fish-gold.html" class="nav-link active">Fish Gold</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="fish-hero">
+        <div class="container">
+            <div class="fish-hero-content">
+                <h1 class="fish-hero-title">
+                    <span class="brand-name">Fish Gold</span>
+                    Heavy-Duty Drilling Equipment
+                </h1>
+                <p class="fish-hero-description">
+                    Heavy-duty drilling equipment designed for the toughest applications. 
+                    Our Fish Gold range delivers exceptional power and precision for professional drilling needs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Filters and Search -->
+            <div class="products-header">
+                <h2 class="products-title">Our Products</h2>
+                <div class="products-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search products...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="sds-bits">SDS Hammer Drill Bits</option>
+                            <option value="chisels">Chisels</option>
+                            <option value="rotary-hammers">Rotary Hammers</option>
+                        </select>
+                        <select id="size-filter">
+                            <option value="">All Sizes</option>
+                            <option value="6mm">6mm</option>
+                            <option value="8mm">8mm</option>
+                            <option value="10mm">10mm</option>
+                            <option value="12mm">12mm</option>
+                            <option value="16mm">16mm</option>
+                            <option value="20mm">20mm</option>
+                        </select>
+                        <select id="sort-select">
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="price-asc">Price Low to High</option>
+                            <option value="price-desc">Price High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Raj Tools</h3>
+                    <p>Your trusted partner for premium cutting and drilling equipment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cycle-plus.html">Cycle Plus</a></li>
+                        <li><a href="fish-gold.html">Fish Gold</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@rajtools.com</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Raj Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/fish-gold.js"></script>
+</body>
+</html>

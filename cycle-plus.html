@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Plus - Premium Cutting Solutions | Raj Tools</title>
+    <meta name="description" content="Explore Cycle Plus premium cutting solutions including diamond saw blades, TCT blades, and ceramic blades.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/cycle-plus.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="/images/logorajtools.png" alt="" style="height: 46px;margin-top: 10px;">
+                <!-- <h2>Raj Tools</h2> -->
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="cycle-plus.html" class="nav-link active">Cycle Plus</a>
+                <a href="fish-gold.html" class="nav-link">Fish Gold</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="cycle-hero">
+        <div class="container">
+            <div class="cycle-hero-content">
+                <h1 class="cycle-hero-title">
+                    <img src="/images/cyclepluslogo.jpg" alt="">
+                    <span class="brand-name">Cycle Plus</span>
+                    Premium Cutting Solutions
+                </h1>
+                <p class="cycle-hero-description">
+                    Professional cutting solutions with unmatched precision and durability. 
+                    Our Cycle Plus range delivers exceptional performance for every cutting application.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Filters and Search -->
+            <div class="products-header">
+                <h2 class="products-title">Our Products</h2>
+                <div class="products-controls">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search products...">
+                    </div>
+                    <div class="filter-controls">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="diamond-blades">Diamond Saw Blades</option>
+                            <option value="tct-blades">TCT Blades</option>
+                            <option value="aluminium-blades">Aluminium Blades</option>
+                            <option value="ceramic-blades">Ceramic Blades</option>
+                            <option value="granite-blades">Granite Blades</option>
+                            <option value="chisels">Chisels</option>
+                            <option value="glass-blades">Glass Blades</option>
+                        </select>
+                        <select id="size-filter">
+                            <option value="">All Sizes</option>
+                            <option value="4-inch">4 inch</option>
+                            <option value="6-inch">6 inch</option>
+                            <option value="8-inch">8 inch</option>
+                            <option value="10-inch">10 inch</option>
+                            <option value="12-inch">12 inch</option>
+                        </select>
+                        <select id="sort-select">
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                            <option value="price-asc">Price Low to High</option>
+                            <option value="price-desc">Price High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Raj Tools</h3>
+                    <p>Your trusted partner for premium cutting and drilling equipment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cycle-plus.html">Cycle Plus</a></li>
+                        <li><a href="fish-gold.html">Fish Gold</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>Email: info@rajtools.com</p>
+                    <p>Phone: +91 12345 67890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Raj Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cycle-plus.js"></script>
+</body>
+</html>
