@@ -10,11 +10,15 @@
 
 /* Hero Section */
 .fish-hero {
-  background: linear-gradient(135deg, var(--fish-primary) 0%, var(--fish-dark) 50%, var(--fish-secondary) 100%);
+  /* background: linear-gradient(135deg, var(--fish-primary) 0%, var(--fish-dark) 50%, var(--fish-secondary) 100%); */
+   /* background: linear-gradient(135deg, var(--fish-light) 0%, var(--fish-primary) 50%, var(--fish-secondary) 100%); */
+     background: linear-gradient(135deg, #ff4e50 0%, #fc913a 50%, #ffb347 100%);
   color: white;
   padding: 120px 0 80px;
   text-align: center;
   position: relative;
+  /* height: 100vh;
+  display: flex; */
   overflow: hidden;
 }
 
@@ -26,7 +30,8 @@
   right: 0;
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.3;
+  /* opacity: 0.3; */
+  opacity: 0.7;
 }
 
 .fish-hero-content {
@@ -228,7 +233,8 @@
 .product-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
+  object-fit: scale-down;
   transition: transform 0.3s ease;
 }
 

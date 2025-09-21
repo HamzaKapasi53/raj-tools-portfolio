@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Brochure</title>
+  <style>
+    /* Page background color */
+    body {
+      background-color: #92400e; /* Dark orange-brown background */
+      font-family: Arial, sans-serif;
+      color: white; /* Text color */
+      text-align: center;
+      padding: 50px;
+    }
+
+    /* Download Button Styles */
+    .download-btn button {
+      background-color: #00bcd4; /* Bright cyan for strong contrast */
+      color: white; /* White text */
+      padding: 18px 40px; /* Padding for bigger button */
+      font-size: 20px; /* Larger font size */
+      border: none; /* No border */
+      border-radius: 50px; /* Rounded pill-like button */
+      cursor: pointer; /* Pointer cursor on hover */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      transition: all 0.3s ease; /* Smooth transitions for hover and active states */
+    }
+
+    /* Button hover effect */
+    .download-btn button:hover {
+      background-color: #0097a7; /* Slightly darker cyan on hover */
+      transform: translateY(-4px); /* Lift the button slightly */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+    }
+
+    /* Button active (clicked) effect */
+    .download-btn button:active {
+      transform: translateY(2px); /* Button slightly sinks when clicked */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow on click */
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Download Our Brochure</h2>
+
+  <!-- Download Brochure Button -->
+  <a href="images/brochure.pdf" download="Brochure" class="download-btn">
+    <button>Download Brochure</button>
+  </a>
+
+</body>
+</html>

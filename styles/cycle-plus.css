@@ -9,7 +9,8 @@
 
 /* Hero Section */
 .cycle-hero {
-  background: linear-gradient(135deg, var(--cycle-primary) 0%, var(--cycle-secondary) 100%);
+  /* background: linear-gradient(135deg, var(--cycle-primary) 0%, var(--cycle-secondary) 100%); */
+  background: linear-gradient(135deg, #fef2f2 0%, #d5b29f 100%);
   color: white;
   padding: 120px 0 80px;
   text-align: center;
