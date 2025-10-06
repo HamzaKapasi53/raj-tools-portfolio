@@ -1,4 +1,5 @@
 # Raj Tools – Brand Showcase Website
+https://hamzakapasi53.github.io/raj-tools-portfolio/
 
 A responsive, modern front-end website built to showcase the brands and products of **Raj Tools**, a supplier of cutting and drilling equipment. The website features separate pages for two product lines — **Cycle Plus** and **Fish Gold** — along with filtering, sorting, and product presentation. This project is built using **HTML**, **CSS**, and **JavaScript**, with no shopping cart or e-commerce functionality.
 
