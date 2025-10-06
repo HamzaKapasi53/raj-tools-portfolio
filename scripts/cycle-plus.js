@@ -232,6 +232,61 @@ const cyclePlusProducts = [
     image: "images/cycle_glassblade.png",
     badge: "Premium",
   },
+   {
+    id: 21,
+     name: "SDS Hammer Drill Bits",
+    category: "drill-bits",
+    description: "3 X 85 TO 25 X 460",
+    price: "₹120",
+    size: "3mm",
+    specs: ["Golden Tipped","Professional Quality"],
+    image: "images/cycle_sds.png",
+    badge: "Premium",
+  },
+   {
+    id: 22,
+     name: "Multi-Purpose Drill Bits",
+    category: "drill-bits",
+    description: "Used for glass, concrete, ceramic and tiles",
+    price: "₹120",
+    size: "3mm",
+    specs: ["3mm","4mm","5mm","6mm"],
+    image: "images/cycle_mpdb3456.png",
+    badge: "Premium",
+  },
+   {
+    id: 23,
+     name: "Multi-Purpose Drill Bits",
+    category: "drill-bits",
+    description: "Used for glass, concrete, ceramic and tiles",
+    price: "₹120",
+    size: "3mm",
+    specs: ["8mm","10mm","12mm"],
+    image: "images/cycle_mpdb81012.png",
+    badge: "Premium",
+  },
+   {
+    id: 24,
+     name: "Multi-Purpose Cross Tipped Drill Bits",
+    category: "drill-bits",
+    description: "Used for glass, concrete, ceramic and tiles",
+    price: "₹120",
+    size: "3mm",
+    specs: ["5mm","6mm"],
+    image: "images/cycle_mpct56.png",
+    badge: "Premium",
+  },
+   {
+    id: 25,
+     name: "Black Ceramic Zero Chipping Segment Blade",
+    category: "ceramic-blades",
+    description: "110 X 20/16mm",
+    price: "₹120",
+    size: "4-inch",
+    specs: ["Dry & Wet Cutting","Can cut any thickness of full body tiles"],
+    image: "images/cycle_blackceramiccard.png",
+    badge: "New",
+  },
 ]
 
 // DOM Elements
@@ -417,6 +472,8 @@ function getCategoryName(category) {
     "aluminium-blades":"Aluminium Blades",
     "granite-blades":"Granite Blades",
     "glass-blades":"Glass Blades",
+    // "sds-hammer-drill-bits":"SDS Hammer Drill Bits"
+    "drill-bits":"Drill Bits"
   }
   return categoryNames[category] || category
 }
