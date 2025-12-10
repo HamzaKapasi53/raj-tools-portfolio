@@ -8,7 +8,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Hot Pressed", "Vitrified Tiles", "Porcelain","Ceramic Tiles"],
-    image: "images/cycle_ceramicblue.png",
+    image: "images/cycle_blueceramiczerochippingblade_1.png",
     badge: "Best Seller",
   },
   {
@@ -19,7 +19,7 @@ const cyclePlusProducts = [
     price: "₹1,899",
     size: "4-inches",
     specs: ["4-16 inches in various thickness", "TCT", "Wood"],
-    image: "images/cycle_tct.png",
+    image: "images/cycle_tctcircularsawbladeprofessional_1.png",
     badge: "Professional",
   },
   {
@@ -30,7 +30,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Hot Pressed", "Marble & Granite", "Ceramic Tiles"],
-    image: "images/cycle_ceramicwhite.png",
+    image: "images/cycle_whiteceramiczerochippingblade_1.png",
     badge: "New",
   },
   // {
@@ -52,7 +52,7 @@ const cyclePlusProducts = [
     price: "₹1,599",
     size: "4-inch",
     specs: ["4 X 30 | 4 X 40 | 5 X 30 | 5 X 40", "Reliable Quality", "Versatile"],
-    image: "images/cycle_tctuniversal.png",
+    image: "images/cycle_tctbladeuniversal_1.png",
     badge: "Versatile",
   },
   {
@@ -63,7 +63,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Hot Pressed", "Marble & Granite", "Dry & Wet Cutting","Ceramic Tiles"],
-    image: "images/cycle_ceramicsuperthin.png",
+    image: "images/cycle_superthinturbozero chippingblade_1.png",
     badge: "Best Seller",
   },
   // {
@@ -85,7 +85,7 @@ const cyclePlusProducts = [
     price: "₹2,199",
     size: "4-inch",
     specs: ["4 X 30 | 4 X 40 | 5 X 30 | 5 X 40", "Fine Finish", "Professional"],
-    image: "images/cycle_tct1.5.png",
+    image: "images/cycle_tctbladethinkerf_1.png",
     badge: "Fine Finish",
   },
     {
@@ -96,7 +96,7 @@ const cyclePlusProducts = [
     price: "₹2,199",
     size: "10-inch",
     specs: ["10 X 100 | 10 X 120 | 12 X 100 | 12 X 120 | 14 X 120 | 16 X 120", "Anti-Vibration", "Low Noise"],
-    image: "images/cycle_alu.png",
+    image: "images/cycle_aluminiumblade_1.png",
     badge: "Fine Finish",
   },
     {
@@ -106,8 +106,8 @@ const cyclePlusProducts = [
     description: "Granite Segment Blade",
     price: "₹2,199",
     size: "4-inch",
-    specs: ["Available in Sizes- 4’’ | 5’’ | 6’’ | 7’’ | 8’’ | 10’’ | 14’’ | 16’’", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
-    image: "images/cycle_seg.png",
+    specs: ["Available in Sizes- 4'' | 5'' | 6'' | 7'' | 8'' | 10'' | 14'' | 16''", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
+    image: "images/cycle_graniteblade_1.png",
     badge: "Fine Finish",
   },
   {
@@ -117,8 +117,8 @@ const cyclePlusProducts = [
     description: "Granite Rim Blade",
     price: "₹2,199",
     size: "4-inch",
-    specs: ["Available in Sizes- 4’’ | 5’’ ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
-    image: "images/cycle_rim.png",
+    specs: ["Available in Sizes- 4'' | 5'' ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
+    image: "images/cycle_graniteblade_2.png",
     badge: "Fine Finish",
   },
    {
@@ -128,8 +128,8 @@ const cyclePlusProducts = [
     description: "Granite Turbo Blade",
     price: "₹2,199",
     size: "4-inch",
-    specs: ["Available in Sizes- 4’’ | 5’’ | 7’’ ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
-    image: "images/cycle_turbo.png",
+    specs: ["Available in Sizes- 4'' | 5'' | 7'' ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
+    image: "images/cycle_graniteblade_3.png",
     badge: "Fine Finish",
   },
      {
@@ -140,7 +140,7 @@ const cyclePlusProducts = [
     price: "₹2,199",
     size: "4-inch",
     specs: [ "Hot-Pressed", "12 Segment","Granite Special"],
-    image: "images/cycle_bluegranite.png",
+    image: "images/cycle_bluegraniteblade_1.png",
     badge: "Fine Finish",
   }, 
   {
@@ -151,7 +151,7 @@ const cyclePlusProducts = [
     price: "₹2,199",
     size: "14-inch",
     specs: [ "Hot-Pressed", "24 Segment","Granite Special"],
-    image: "images/cycle_seg14.png",
+    image: "images/cycle_14inchgraniteblade_1.png",
     badge: "Fine Finish",
   },
     {
@@ -162,7 +162,7 @@ const cyclePlusProducts = [
     price: "₹2,199",
     size: "4-inch",
     specs: [ "Hot-Pressed", "10 Segment","Granite Special"],
-    image: "images/cycle_for_granite.png",
+    image: "images/cycle_forgraniteblade_1.png",
     badge: "Fine Finish",
   },
   {
@@ -173,7 +173,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Hot Pressed", "Porcelain", "Ceramic Tiles","Vitrified Tiles"],
-    image: "images/cycle_ceramicgreen.png",
+    image: "images/cycle_greenkeramicblade_1.png",
     badge: "Pro Series",
   },
 
@@ -185,7 +185,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "",
     specs: ["17X280X22mm Flat", "17X280X50mm Flat", "17X280X75mm Flat","17X280X75mm Flat","17X400X22mm Flat","17X400X50mm Flat","17X400X75mm Flat"],
-    image: "images/cycle_chiselhsc.png",
+    image: "images/cycle_hscchisel_1.png",
     badge: "Premium",
   },
    {
@@ -196,7 +196,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "",
     specs: ["18 X 400 Pointed", "18 X 400 X 25mm", "18 X 400 X 50mm","18 X 400 X 75mm","18 X 600 Pointed"],
-    image: "images/cycle_chiselsmc.png",
+    image: "images/cycle_smcchisel_1.png",
     badge: "Premium",
   },
     {
@@ -207,7 +207,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "",
     specs: ["30 X 400 Pointed", "30 X 400 X 35 MM",],
-    image: "images/cycle_chiselPH65AC.png",
+    image: "images/cycle_ph65acchisel_1.png",
     badge: "Premium",
   },
    {
@@ -218,7 +218,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "",
     specs: ["314 X 250 FLAT",],
-    image: "images/cycle_chiselspc.png",
+    image: "images/cycle_spcchisel_1.png",
     badge: "Premium",
   },
    {
@@ -229,7 +229,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Diamond Cutting Disc-100mm",],
-    image: "images/cycle_glassblade.png",
+    image: "images/cycle_glasscuttingblade_1.png",
     badge: "Premium",
   },
    {
@@ -240,7 +240,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "3mm",
     specs: ["Golden Tipped","Professional Quality"],
-    image: "images/cycle_sds.png",
+    image: "images/cycle_sdshammerdrillbit_1.png",
     badge: "Premium",
   },
    {
@@ -251,7 +251,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "3mm",
     specs: ["3mm","4mm","5mm","6mm"],
-    image: "images/cycle_mpdb3456.png",
+    image: "images/cycle_mpdb3456_1.png",
     badge: "Premium",
   },
    {
@@ -262,7 +262,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "3mm",
     specs: ["8mm","10mm","12mm"],
-    image: "images/cycle_mpdb81012.png",
+    image: "images/cycle_mpdb81012_1.png",
     badge: "Premium",
   },
    {
@@ -273,7 +273,7 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "3mm",
     specs: ["5mm","6mm"],
-    image: "images/cycle_mpct56.png",
+    image: "images/cycle_mpct56_1.png",
     badge: "Premium",
   },
    {
@@ -284,21 +284,21 @@ const cyclePlusProducts = [
     price: "₹120",
     size: "4-inch",
     specs: ["Dry & Wet Cutting","Can cut any thickness of full body tiles"],
-    image: "images/cycle_blackceramiccard.png",
+    image: "images/cycle_blackceramiczerochippingsegmentblade_1.png",
     badge: "New",
   },
 ]
 
 // DOM Elements
-let productsGrid
-let searchInput
-let categoryFilter
-let sizeFilter
-let sortSelect
-let noResults
+let cyclePlusProductsGrid
+let cycleSearchInput
+let cycleCategoryFilter
+let cycleSizeFilter
+let cycleSortSelect
+let cycleNoResults
 
 // Current filters
-const currentFilters = {
+const cycleCurrentFilters = {
   search: "",
   category: "",
   size: "",
@@ -308,28 +308,28 @@ const currentFilters = {
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Get DOM elements
-  productsGrid = document.getElementById("products-grid")
-  searchInput = document.getElementById("search-input")
-  categoryFilter = document.getElementById("category-filter")
-  sizeFilter = document.getElementById("size-filter")
-  sortSelect = document.getElementById("sort-select")
-  noResults = document.getElementById("no-results")
+  cyclePlusProductsGrid = document.getElementById("products-grid")
+  cycleSearchInput = document.getElementById("search-input")
+  cycleCategoryFilter = document.getElementById("category-filter")
+  cycleSizeFilter = document.getElementById("size-filter")
+  cycleSortSelect = document.getElementById("sort-select")
+  cycleNoResults = document.getElementById("no-results")
 
   // Add event listeners
-  if (searchInput) {
-    searchInput.addEventListener("input", handleSearch)
+  if (cycleSearchInput) {
+    cycleSearchInput.addEventListener("input", handleSearch)
   }
 
-  if (categoryFilter) {
-    categoryFilter.addEventListener("change", handleCategoryFilter)
+  if (cycleCategoryFilter) {
+    cycleCategoryFilter.addEventListener("change", handleCategoryFilter)
   }
 
-  if (sizeFilter) {
-    sizeFilter.addEventListener("change", handleSizeFilter)
+  if (cycleSizeFilter) {
+    cycleSizeFilter.addEventListener("change", handleSizeFilter)
   }
 
-  if (sortSelect) {
-    sortSelect.addEventListener("change", handleSort)
+  if (cycleSortSelect) {
+    cycleSortSelect.addEventListener("change", handleSort)
   }
 
   // Initial render
@@ -338,25 +338,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Handle search
 function handleSearch(e) {
-  currentFilters.search = e.target.value.toLowerCase()
+  cycleCurrentFilters.search = e.target.value.toLowerCase()
   renderProducts()
 }
 
 // Handle category filter
 function handleCategoryFilter(e) {
-  currentFilters.category = e.target.value
+  cycleCurrentFilters.category = e.target.value
   renderProducts()
 }
 
 // Handle size filter
 function handleSizeFilter(e) {
-  currentFilters.size = e.target.value
+  cycleCurrentFilters.size = e.target.value
   renderProducts()
 }
 
 // Handle sorting
 function handleSort(e) {
-  currentFilters.sort = e.target.value
+  cycleCurrentFilters.sort = e.target.value
   renderProducts()
 }
 
@@ -365,26 +365,26 @@ function filterProducts() {
   const filtered = cyclePlusProducts.filter((product) => {
     // Search filter
     const matchesSearch =
-      !currentFilters.search ||
-      product.name.toLowerCase().includes(currentFilters.search) ||
-      product.description.toLowerCase().includes(currentFilters.search) ||
-      product.specs.some((spec) => spec.toLowerCase().includes(currentFilters.search))
+      !cycleCurrentFilters.search ||
+      product.name.toLowerCase().includes(cycleCurrentFilters.search) ||
+      product.description.toLowerCase().includes(cycleCurrentFilters.search) ||
+      product.specs.some((spec) => spec.toLowerCase().includes(cycleCurrentFilters.search))
 
     // Category filter
-    const matchesCategory = !currentFilters.category || product.category === currentFilters.category
+    const matchesCategory = !cycleCurrentFilters.category || product.category === cycleCurrentFilters.category
 
     const matchesSize =
-      !currentFilters.size ||
-      product.size === currentFilters.size ||
-      product.size.includes(currentFilters.size) ||
-      product.specs.some((spec) => spec.toLowerCase().includes(currentFilters.size.toLowerCase()))
+      !cycleCurrentFilters.size ||
+      product.size === cycleCurrentFilters.size ||
+      product.size.includes(cycleCurrentFilters.size) ||
+      product.specs.some((spec) => spec.toLowerCase().includes(cycleCurrentFilters.size.toLowerCase()))
 
     return matchesSearch && matchesCategory && matchesSize
   })
 
   // Sort products
   filtered.sort((a, b) => {
-    switch (currentFilters.sort) {
+    switch (cycleCurrentFilters.sort) {
       case "name-asc":
         return a.name.localeCompare(b.name)
       case "name-desc":
@@ -403,30 +403,30 @@ function filterProducts() {
 
 // Render products
 function renderProducts() {
-  if (!productsGrid) return
+  if (!cyclePlusProductsGrid) return
 
   const filteredProducts = filterProducts()
 
   // Clear existing products
-  productsGrid.innerHTML = ""
+  cyclePlusProductsGrid.innerHTML = ""
 
   if (filteredProducts.length === 0) {
     // Show no results message
-    if (noResults) {
-      noResults.style.display = "block"
+    if (cycleNoResults) {
+      cycleNoResults.style.display = "block"
     }
     return
   }
 
   // Hide no results message
-  if (noResults) {
-    noResults.style.display = "none"
+  if (cycleNoResults) {
+    cycleNoResults.style.display = "none"
   }
 
   // Render products
   filteredProducts.forEach((product, index) => {
     const productCard = createProductCard(product, index)
-    productsGrid.appendChild(productCard)
+    cyclePlusProductsGrid.appendChild(productCard)
   })
 }
 
@@ -453,9 +453,6 @@ function createProductCard(product, index) {
                 <button class="btn-cycle btn-cycle-primary" onclick="viewProduct(${product.id})">
                     View Details
                 </button>
-                <button class="btn-cycle btn-cycle-secondary" onclick="addToWishlist(${product.id})">
-                    <i class="fas fa-heart"></i>
-                </button>
             </div>
         </div>
     `
@@ -479,16 +476,16 @@ function getCategoryName(category) {
 }
 
 // Product actions (placeholder functions)
+// function viewProduct(productId) {
+//   const product = cyclePlusProducts.find((p) => p.id === productId)
+//   if (product) {
+//     alert(`Viewing details for: ${product.name}\n\nDescription: ${product.description}\nPrice: ${product.price}`)
+//   }
+// }
 function viewProduct(productId) {
-  const product = cyclePlusProducts.find((p) => p.id === productId)
-  if (product) {
-    alert(`Viewing details for: ${product.name}\n\nDescription: ${product.description}\nPrice: ${product.price}`)
-  }
+  // Redirect to product details page with the product ID in the query string
+  window.location.href = `product-details.html?id=${productId}`;
 }
 
-function addToWishlist(productId) {
-  const product = cyclePlusProducts.find((p) => p.id === productId)
-  if (product) {
-    alert(`${product.name} added to wishlist!`)
-  }
-}
+
+

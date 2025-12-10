@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    :root {
+      --cycle-primary: #7c2d12;
+      --cycle-secondary: #92400e;
+      --cycle-light: #fef2f2;
+      --cycle-dark: #451a03;
+      --cycle-accent: #dc2626;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      color: var(--cycle-dark);
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--cycle-primary) 0%, var(--cycle-secondary) 100%);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      margin-top: 70px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .product-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .main-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      background: #f9fafb;
+      transition: transform 0.3s ease;
+    }
+
+    .main-image:hover {
+      transform: scale(1.02);
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 12px;
+    }
+
+    .thumbnail {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #f9fafb;
+    }
+
+    .thumbnail:hover {
+      border-color: var(--cycle-accent);
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+    }
+
+    .thumbnail.active {
+      border-color: var(--cycle-primary);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .product-name {
+      font-size: 2.2rem;
+      color: var(--cycle-primary);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .product-description {
+      font-size: 1.1rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .product-price {
+      font-size: 2rem;
+      color: var(--cycle-accent);
+      font-weight: 700;
+      padding: 1rem;
+      background: var(--cycle-light);
+      border-radius: 8px;
+      border-left: 4px solid var(--cycle-accent);
+    }
+
+    .specs-section {
+      margin-top: 1rem;
+    }
+
+    .specs-section h3 {
+      font-size: 1.3rem;
+      color: var(--cycle-primary);
+      margin-bottom: 1rem;
+    }
+
+    .product-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      list-style: none;
+    }
+
+    .product-specs li {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border: 2px solid var(--cycle-secondary);
+      color: var(--cycle-dark);
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .product-specs li:hover {
+      background: var(--cycle-light);
+      transform: translateX(4px);
+      border-color: var(--cycle-primary);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--cycle-secondary) 0%, var(--cycle-dark) 100%);
+      color: white;
+    }
+
+    /* Zoom Overlay */
+    .zoom-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .zoom-overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(255,255,255,0.2);
+    }
+
+    .zoom-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .zoom-close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 2.5rem;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: rgba(220, 38, 38, 0.8);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      line-height: 1;
+      border: none;
+      padding: 0;
+    }
+
+    .zoom-close:hover {
+      background-color: var(--cycle-accent);
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: 768px) {
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .product-name {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .product-specs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .back-btn {
+  position: absolute;
+  left: 20px;
+  /* top: 20px; */
+  padding: 8px 14px;
+  font-size: 1rem;
+  background: white;
+  color: var(--cycle-primary);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--cycle-light);
+  transform: translateX(-4px);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="images/rajtoolslogo.jpg" alt="" style="height: 46px;margin-top: 10px;">
+      </div>
+      <div class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <!-- <a href="cycle-plus.html" class="nav-link">Cycle Plus</a>
+        <a href="fish-gold.html" class="nav-link">Fish Gold</a> -->
+        <a href="cycle-plus.html" class="nav-link" id="nav-cycle">Cycle Plus</a>
+<a href="fish-gold.html" class="nav-link" id="nav-fish">Fish Gold</a>
+
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+<header>
+  <button class="back-btn" onclick="history.back()">← Back</button>
+  <h1 id="page-header">Product Details</h1>
+</header>
+
+  <!-- <header>
+    <h1 id="page-header">Product Details</h1>
+  </header> -->
+
+  <main class="container">
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="main-image" onclick="zoomImage()">
+          <img id="main-product-image" src="images/placeholder-product.jpg" alt="Product Image" />
+        </div>
+        <div class="thumbnail-images" id="thumbnail-images"></div>
+      </div>
+
+      <div class="product-info">
+        <h2 class="product-name" id="product-name">Loading...</h2>
+        <p class="product-description" id="product-description"></p>
+        <div class="product-price" id="product-price"></div>
+        
+        <div class="specs-section">
+          <h3>Specifications</h3>
+          <ul class="product-specs" id="product-specs"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="page-footer">
+    &copy; 2025 Raj Tools. All rights reserved.
+  </footer>
+
+  <!-- Zoom Overlay -->
+  <div class="zoom-overlay" id="zoom-overlay">
+    <span class="zoom-close" onclick="closeZoom()">×</span>
+    <img id="zoom-image" src="" alt="Zoomed Image" />
+  </div>
+
+  <!-- Product Data -->
+  <script src="scripts/cycle-plus.js"></script>
+  <script src="scripts/fish-gold.js"></script>
+  <script>
+    console.log("=== SCRIPT STARTED ===");
+    console.log("cyclePlusProducts exists?", typeof cyclePlusProducts !== 'undefined');
+    console.log("fishGoldProducts exists?", typeof fishGoldProducts !== 'undefined');
+    
+    if (typeof cyclePlusProducts !== 'undefined') {
+      console.log("Cycle Plus products loaded:", cyclePlusProducts.length);
+    }
+    if (typeof fishGoldProducts !== 'undefined') {
+      console.log("Fish Gold products loaded:", fishGoldProducts.length);
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("=== DOM LOADED ===");
+      
+      // Verify scripts are loaded
+      if (typeof cyclePlusProducts === 'undefined') {
+        console.error('ERROR: cycle-plus.js not loaded!');
+        document.getElementById("product-name").textContent = "Error: Cycle Plus product data not loaded. Check console.";
+        return;
+      }
+      if (typeof fishGoldProducts === 'undefined') {
+        console.error('ERROR: fish-gold.js not loaded!');
+        document.getElementById("product-name").textContent = "Error: Fish Gold product data not loaded. Check console.";
+        return;
+      }
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = Number(urlParams.get("id"));
+      
+      console.log("Looking for product ID:", productId);
+      console.log("Cycle Plus products count:", cyclePlusProducts.length);
+      console.log("Fish Gold products count:", fishGoldProducts.length);
+      console.log("Fish Gold IDs:", fishGoldProducts.map(p => p.id));
+      
+      // Try to find product in both Cycle Plus and Fish Gold
+      // let product = cyclePlusProducts.find(p => p.id === productId);
+      // let brand = "cycle";
+      // let brandName = "Cycle Plus";
+      
+      // if (!product) {
+      //   product = fishGoldProducts.find(p => p.id === productId);
+      //   brand = "fish";
+      //   brandName = "Fish Gold";
+      // }
+      // Detect brand automatically
+let product = null;
+let brand = "";
+let brandName = "";
+
+if (cyclePlusProducts.some(p => p.id === productId)) {
+  product = cyclePlusProducts.find(p => p.id === productId);
+  brand = "cycle";
+  brandName = "Cycle Plus";
+} 
+else if (fishGoldProducts.some(p => p.id === productId)) {
+  product = fishGoldProducts.find(p => p.id === productId);
+  brand = "fish";
+  brandName = "Fish Gold";
+}
+
+// Highlight correct active menu
+document.querySelectorAll(".nav-link").forEach(link => link.classList.remove("active"));
+if (brand === "cycle") {
+  document.getElementById("nav-cycle").classList.add("active");
+}
+if (brand === "fish") {
+  document.getElementById("nav-fish").classList.add("active");
+}
+
+
+      if (!product) {
+        document.getElementById("product-name").textContent = "Product not found. ID: " + productId;
+        document.getElementById("page-header").textContent = "Product Not Found";
+        console.error("Product not found for ID:", productId);
+        console.error("Available Cycle Plus IDs:", cyclePlusProducts.map(p => p.id));
+        console.error("Available Fish Gold IDs:", fishGoldProducts.map(p => p.id));
+        return;
+      }
+
+      console.log("Found product:", product.name, "Brand:", brand);
+      
+      // Update page header with brand name
+      document.getElementById("page-header").textContent = `${brandName} Product Details`;
+
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-description").textContent = product.description;
+      document.getElementById("product-price").textContent = `Price: ${product.price}`;
+
+      const specList = document.getElementById("product-specs");
+      product.specs.forEach(spec => {
+        const li = document.createElement("li");
+        li.textContent = spec;
+        specList.appendChild(li);
+      });
+
+      // Load thumbnails
+      const thumbnailContainer = document.getElementById("thumbnail-images");
+      
+      // Use the image path from product data and extract base path
+      const baseImagePath = product.image.replace(/_1\.png$/, '').replace(/\.png$/, '');
+      console.log("Base image path:", baseImagePath);
+
+      // Try to load images _1, _2, _3, etc.
+      let firstImageLoaded = false;
+      
+      for (let i = 1; i <= 10; i++) {
+        const imgPath = `${baseImagePath}_${i}.png`;
+        const img = new Image();
+        img.src = imgPath;
+        img.alt = `${product.name} view ${i}`;
+        img.classList.add("thumbnail");
+        
+        img.onload = () => {
+          // Set first loaded image as main image
+          if (!firstImageLoaded) {
+            firstImageLoaded = true;
+            document.getElementById("main-product-image").src = imgPath;
+            document.getElementById("zoom-image").src = imgPath;
+            img.classList.add("active");
+          }
+          
+          thumbnailContainer.appendChild(img);
+        };
+        
+        img.onerror = () => {
+          // Image doesn't exist, skip it
+          console.log("Image not found:", imgPath);
+        };
+        
+        img.onclick = () => {
+          document.getElementById("main-product-image").src = imgPath;
+          document.getElementById("zoom-image").src = imgPath;
+          document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+          img.classList.add('active');
+        };
+      }
+      
+      // If no numbered images found after a delay, show fallback message
+      setTimeout(() => {
+        if (!firstImageLoaded) {
+          console.error("No images found for base path:", baseImagePath);
+          document.getElementById("main-product-image").alt = "No image available";
+          document.getElementById("product-name").innerHTML += " <span style='color:red'>(No images found)</span>";
+        }
+      }, 1000);
+    });
+
+    function zoomImage() {
+      document.getElementById("zoom-overlay").classList.add("show");
+    }
+
+    function closeZoom() {
+      document.getElementById("zoom-overlay").classList.remove("show");
+    }
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

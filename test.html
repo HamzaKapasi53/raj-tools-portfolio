@@ -1,54 +1,480 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Brochure</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - Cycle Plus</title>
   <style>
-    /* Page background color */
+    :root {
+      --primary: #7c2d12;
+      --secondary: #92400e;
+      --accent: #dc2626;
+      --light: #fef2f2;
+      --dark: #451a03;
+      --gray: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      background-color: #92400e; /* Dark orange-brown background */
-      font-family: Arial, sans-serif;
-      color: white; /* Text color */
-      text-align: center;
-      padding: 50px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      color: var(--dark);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Download Button Styles */
-    .download-btn button {
-      background-color: #00bcd4; /* Bright cyan for strong contrast */
-      color: white; /* White text */
-      padding: 18px 40px; /* Padding for bigger button */
-      font-size: 20px; /* Larger font size */
-      border: none; /* No border */
-      border-radius: 50px; /* Rounded pill-like button */
-      cursor: pointer; /* Pointer cursor on hover */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-      transition: all 0.3s ease; /* Smooth transitions for hover and active states */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      width: 95%;
+      height: 90vh;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(124, 45, 18, 0.1);
+      overflow: hidden;
     }
 
-    /* Button hover effect */
-    .download-btn button:hover {
-      background-color: #0097a7; /* Slightly darker cyan on hover */
-      transform: translateY(-4px); /* Lift the button slightly */
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+    .product-gallery {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--light);
+      padding: 2rem;
+      position: relative;
     }
 
-    /* Button active (clicked) effect */
-    .download-btn button:active {
-      transform: translateY(2px); /* Button slightly sinks when clicked */
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow on click */
+    .main-image-container {
+      flex: 1;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      cursor: crosshair;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .zoom-lens {
+      position: absolute;
+      border: 1px solid var(--primary);
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+      pointer-events: none;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .zoom-result {
+      position: absolute;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background-repeat: no-repeat;
+    }
+
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+
+    .thumbnail {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .thumbnail:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+    }
+
+    .thumbnail.active {
+      border-color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      flex: 1;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .product-badge {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      align-self: flex-start;
+    }
+
+    .product-name {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .product-category {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .product-description {
+      background-color: var(--light);
+      padding: 1.2rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border-left: 4px solid var(--primary);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-item {
+      background-color: white;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-top: 3px solid var(--primary);
+    }
+
+    .info-label {
+      font-size: 0.85rem;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-value {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .info-value.price {
+      color: var(--accent);
+    }
+
+    .specs-container {
+      margin-top: auto;
+    }
+
+    .specs-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .specs-title::before {
+      content: '';
+      display: inline-block;
+      width: 5px;
+      height: 20px;
+      background-color: var(--accent);
+      margin-right: 10px;
+    }
+
+    .product-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .product-specs li {
+      background-color: var(--light);
+      border: 1px solid var(--secondary);
+      color: var(--dark);
+      padding: 8px 16px;
+      border-radius: 20px;
+      list-style: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .product-specs li:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(124, 45, 18, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        overflow: auto;
+        height: auto;
+        padding: 1rem;
+      }
+
+      .container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+      }
+
+      .product-gallery {
+        padding: 1.5rem;
+      }
+
+      .product-info {
+        padding: 1.5rem;
+      }
+
+      .product-name {
+        font-size: 1.8rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-specs {
+        justify-content: center;
+      }
+
+      .zoom-result {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h2>Download Our Brochure</h2>
+  <main class="container">
+    
+    <div class="product-gallery">
+      <div class="main-image-container">
+        <div class="main-image" id="main-image">
+          <img id="main-product-image" src="images/placeholder-product.jpg" alt="Product Image" />
+          <div class="zoom-lens" id="zoom-lens"></div>
+        </div>
+        <div class="zoom-result" id="zoom-result"></div>
+      </div>
+      <div class="thumbnail-container" id="thumbnail-images"></div>
+    </div>
 
-  <!-- Download Brochure Button -->
-  <a href="images/brochure.pdf" download="Brochure" class="download-btn">
-    <button>Download Brochure</button>
-  </a>
+    <div class="product-info">
+      <div id="product-badge" class="product-badge" style="display: none;"></div>
+      <h2 class="product-name" id="product-name">Loading...</h2>
+      <div class="product-category" id="product-category"></div>
+      <p class="product-description" id="product-description"></p>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Price</div>
+          <div class="info-value price" id="product-price"></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Size</div>
+          <div class="info-value" id="product-size"></div>
+        </div>
+      </div>
+      
+      <div class="specs-container">
+        <h3 class="specs-title">Product Specifications</h3>
+        <ul class="product-specs" id="product-specs"></ul>
+      </div>
+    </div>
+  </main>
 
+  <!-- Product Data -->
+  <script src="scripts/cycle-plus.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+      const product = cyclePlusProducts.find(p => p.id == productId);
+
+      if (!product) {
+        document.getElementById("product-name").textContent = "Product not found.";
+        return;
+      }
+
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-category").textContent = product.category;
+      document.getElementById("product-description").textContent = product.description;
+      document.getElementById("main-product-image").src = product.image;
+      document.getElementById("product-price").textContent = `₹${product.price}`;
+      document.getElementById("product-size").textContent = product.size;
+
+      // Show badge if it exists
+      if (product.badge) {
+        const badgeElement = document.getElementById("product-badge");
+        badgeElement.textContent = product.badge;
+        badgeElement.style.display = "inline-block";
+      }
+
+      const specList = document.getElementById("product-specs");
+      product.specs.forEach(spec => {
+        const li = document.createElement("li");
+        li.textContent = spec;
+        specList.appendChild(li);
+      });
+
+      // Load additional thumbnails
+      const thumbnailContainer = document.getElementById("thumbnail-images");
+      const baseImagePath = product.image.substring(0, product.image.lastIndexOf('.'));
+      
+      for (let i = 1; i <= 3; i++) {
+        const imgPath = `${baseImagePath}_${i}.png`;
+        const img = new Image();
+        img.src = imgPath;
+        img.alt = `${product.name} image ${i}`;
+        img.classList.add("thumbnail");
+        img.onerror = () => img.remove();
+        img.onload = () => {
+          img.onclick = () => {
+            document.getElementById("main-product-image").src = imgPath;
+            
+            document.querySelectorAll(".thumbnail").forEach(t => t.classList.remove("active"));
+            img.classList.add("active");
+            
+            // Reinitialize zoom with new image
+            setTimeout(initZoom, 100);
+          };
+        };
+        thumbnailContainer.appendChild(img);
+      }
+      
+      // Initialize zoom functionality after image loads
+      document.getElementById('main-product-image').onload = function() {
+        initZoom();
+      };
+    });
+
+    function initZoom() {
+      const mainImage = document.getElementById('main-image');
+      const zoomLens = document.getElementById('zoom-lens');
+      const zoomResult = document.getElementById('zoom-result');
+      const mainProductImg = document.getElementById('main-product-image');
+
+      // Set the background image for zoom result
+      zoomResult.style.backgroundImage = `url('${mainProductImg.src}')`;
+      zoomResult.style.backgroundSize = '500% 500%';
+
+      // When mouse enters the main image container
+      mainImage.addEventListener('mouseenter', () => {
+        zoomLens.style.opacity = '1';
+        zoomResult.style.opacity = '1';
+      });
+
+      // When mouse leaves the main image container
+      mainImage.addEventListener('mouseleave', () => {
+        zoomLens.style.opacity = '0';
+        zoomResult.style.opacity = '0';
+      });
+
+      // When mouse moves over the main image
+      mainImage.addEventListener('mousemove', moveLens);
+
+      function moveLens(e) {
+        // Prevent any other actions that may occur when moving over the image
+        e.preventDefault();
+        
+        // Get the cursor's x and y positions
+        const pos = getCursorPos(e);
+        
+        // Calculate the position of the lens
+        let x = pos.x - (zoomLens.offsetWidth / 2);
+        let y = pos.y - (zoomLens.offsetHeight / 2);
+        
+        // Prevent the lens from being positioned outside the image
+        if (x > mainImage.offsetWidth - zoomLens.offsetWidth) x = mainImage.offsetWidth - zoomLens.offsetWidth;
+        if (x < 0) x = 0;
+        if (y > mainImage.offsetHeight - zoomLens.offsetHeight) y = mainImage.offsetHeight - zoomLens.offsetHeight;
+        if (y < 0) y = 0;
+        
+        // Set the position of the lens
+        zoomLens.style.left = x + "px";
+        zoomLens.style.top = y + "px";
+        
+        // Calculate the zoom ratio (zoom result is 3x larger than lens)
+        const cx = 3;
+        const cy = 3;
+        
+        // Set the background position of the result div
+        const bgx = -(x * cx);
+        const bgy = -(y * cy);
+        zoomResult.style.backgroundPosition = `${bgx}px ${bgy}px`;
+      }
+
+      function getCursorPos(e) {
+        const rect = mainImage.getBoundingClientRect();
+        return {
+          x: e.pageX - rect.left - window.pageXOffset,
+          y: e.pageY - rect.top - window.pageYOffset
+        };
+      }
+    }
+  </script>
 </body>
 </html>

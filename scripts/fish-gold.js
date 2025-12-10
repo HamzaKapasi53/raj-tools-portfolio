@@ -1,58 +1,59 @@
 // Fish Gold Products Data
+// Updated: 2025-12-10 - IDs changed to 101-105 to avoid conflicts with Cycle Plus
 const fishGoldProducts = [
   {
-    id: 1,
+    id: 101,
     name: "Ceramic Zero Chipping Blade",
     category: "ceramic-blades",
     description: "110 X 20/16mm",
     price: "₹899",
     size: "4-inch",
     specs: ["Hot Pressed", "Ceramic Tiles"],
-    image: "images/fish_ceramic.png",
+    image: "images/fish_ceramiczerochippingblade_1.png",
     badge: "Precision",
   },
   {
-    id: 2,
-    name: "Ceramic Zero Chipping Blade",
+    id: 102,
+    name: "Ceramic Zero Chipping Blade Key Slot",
     category: "ceramic-blades",
     description: "110 X 20/16mm",
     price: "₹899",
     size: "4-inch",
     specs: ["Hot Pressed", "Ceramic Tiles","Key Slot"],
-    image: "images/fish_ceramiccard.png",
+    image: "images/fish_ceramiczerochippingbladekeyslot_1.png",
     badge: "Precision",
   },
   {
-    id: 3,
+    id: 103,
     name: "Ceramic Nano White Blade",
     category: "ceramic-blades",
     description: "110 X 20/16mm",
     price: "₹899",
     size: "4-inch",
     specs: ["Hot Pressed", "G4 & G5 Marble","Artificial White Marbles"],
-    image: "images/fish_ceramicnanowhite.png",
+    image: "images/fish_ceramicnanowhiteblade_1.png",
     badge: "Best Seller",
   },
   {
-    id: 4,
+    id: 104,
     name: "Diamond Cup Wheel- 3\" & 4\"",
     category: "diamond-cup-wheels",
     description: "Heavy-duty diamond cup wheel for aggressive grinding and polishing of concrete and stone surfaces.",
     price: "₹1,599",
     size: ["3-inch","4-inch"],
     specs: ["80mm & 105mm", "Segmented", "Turbo"],
-    image: "images/fish_dcw34.png",
+    image: "images/fish_diamondcupwheel34_1.png",
     badge: "Industrial",
   },
   {
-    id: 5,
+    id: 105,
    name: "Diamond Double Row Cup Wheel- 5\" & 7\"",
     category: "diamond-cup-wheels",
     description: "Heavy-duty diamond cup wheel for aggressive grinding and polishing of concrete and stone surfaces.",
     price: "₹1,599",
     size: ["5-inch","7-inch"],
     specs: ["Sizes- 5\" & 7\"", "Double Row Cup", "Professional Quality"],
-    image: "images/fish_dcw57.png",
+    image: "images/fish_diamonddoublerowcupwheel57_1.png",
     badge: "Industrial",
   },
   // {
@@ -102,15 +103,15 @@ const fishGoldProducts = [
 ]
 
 // DOM Elements
-let productsGrid
-let searchInput
-let categoryFilter
-let sizeFilter
-let sortSelect
-let noResults
+let fishGoldProductsGrid
+let fishSearchInput
+let fishCategoryFilter
+let fishSizeFilter
+let fishSortSelect
+let fishNoResults
 
 // Current filters
-const currentFilters = {
+const fishCurrentFilters = {
   search: "",
   category: "",
   size: "",
@@ -120,28 +121,28 @@ const currentFilters = {
 // Initialize when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
   // Get DOM elements
-  productsGrid = document.getElementById("products-grid")
-  searchInput = document.getElementById("search-input")
-  categoryFilter = document.getElementById("category-filter")
-  sizeFilter = document.getElementById("size-filter")
-  sortSelect = document.getElementById("sort-select")
-  noResults = document.getElementById("no-results")
+  fishGoldProductsGrid = document.getElementById("products-grid")
+  fishSearchInput = document.getElementById("search-input")
+  fishCategoryFilter = document.getElementById("category-filter")
+  fishSizeFilter = document.getElementById("size-filter")
+  fishSortSelect = document.getElementById("sort-select")
+  fishNoResults = document.getElementById("no-results")
 
   // Add event listeners
-  if (searchInput) {
-    searchInput.addEventListener("input", handleSearch)
+  if (fishSearchInput) {
+    fishSearchInput.addEventListener("input", handleSearch)
   }
 
-  if (categoryFilter) {
-    categoryFilter.addEventListener("change", handleCategoryFilter)
+  if (fishCategoryFilter) {
+    fishCategoryFilter.addEventListener("change", handleCategoryFilter)
   }
 
-  if (sizeFilter) {
-    sizeFilter.addEventListener("change", handleSizeFilter)
+  if (fishSizeFilter) {
+    fishSizeFilter.addEventListener("change", handleSizeFilter)
   }
 
-  if (sortSelect) {
-    sortSelect.addEventListener("change", handleSort)
+  if (fishSortSelect) {
+    fishSortSelect.addEventListener("change", handleSort)
   }
 
   // Initial render
@@ -150,24 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Handle search
 function handleSearch(e) {
-  currentFilters.search = e.target.value.toLowerCase()
+  fishCurrentFilters.search = e.target.value.toLowerCase()
   renderProducts()
 }
 
 // Handle category filter
 function handleCategoryFilter(e) {
-  currentFilters.category = e.target.value
+  fishCurrentFilters.category = e.target.value
   renderProducts()
 }
 
 function handleSizeFilter(e) {
-  currentFilters.size = e.target.value
+  fishCurrentFilters.size = e.target.value
   renderProducts()
 }
 
 // Handle sort
 function handleSort(e) {
-  currentFilters.sort = e.target.value
+  fishCurrentFilters.sort = e.target.value
   renderProducts()
 }
 
@@ -176,21 +177,21 @@ function filterProducts() {
   const filtered = fishGoldProducts.filter((product) => {
     // Search filter
     const matchesSearch =
-      !currentFilters.search ||
-      product.name.toLowerCase().includes(currentFilters.search) ||
-      product.description.toLowerCase().includes(currentFilters.search) ||
-      product.specs.some((spec) => spec.toLowerCase().includes(currentFilters.search))
+      !fishCurrentFilters.search ||
+      product.name.toLowerCase().includes(fishCurrentFilters.search) ||
+      product.description.toLowerCase().includes(fishCurrentFilters.search) ||
+      product.specs.some((spec) => spec.toLowerCase().includes(fishCurrentFilters.search))
 
     // Category filter
-    const matchesCategory = !currentFilters.category || product.category === currentFilters.category
+    const matchesCategory = !fishCurrentFilters.category || product.category === fishCurrentFilters.category
 
     const matchesSize =
-      !currentFilters.size ||
-      product.size === currentFilters.size ||
-      product.size.includes(currentFilters.size) ||
-      product.specs.some((spec) => spec.toLowerCase().includes(currentFilters.size.toLowerCase())) ||
+      !fishCurrentFilters.size ||
+      product.size === fishCurrentFilters.size ||
+      product.size.includes(fishCurrentFilters.size) ||
+      product.specs.some((spec) => spec.toLowerCase().includes(fishCurrentFilters.size.toLowerCase())) ||
       (product.specs.some((spec) => spec.includes("-")) &&
-        currentFilters.size === "6mm" &&
+        fishCurrentFilters.size === "6mm" &&
         product.specs.some((spec) => spec.includes("6")))
 
     return matchesSearch && matchesCategory && matchesSize
@@ -198,7 +199,7 @@ function filterProducts() {
 
   // Sort products
   filtered.sort((a, b) => {
-    switch (currentFilters.sort) {
+    switch (fishCurrentFilters.sort) {
       case "name-asc":
         return a.name.localeCompare(b.name)
       case "name-desc":
@@ -217,30 +218,30 @@ function filterProducts() {
 
 // Render products
 function renderProducts() {
-  if (!productsGrid) return
+  if (!fishGoldProductsGrid) return
 
   const filteredProducts = filterProducts()
 
   // Clear existing products
-  productsGrid.innerHTML = ""
+  fishGoldProductsGrid.innerHTML = ""
 
   if (filteredProducts.length === 0) {
     // Show no results message
-    if (noResults) {
-      noResults.style.display = "block"
+    if (fishNoResults) {
+      fishNoResults.style.display = "block"
     }
     return
   }
 
   // Hide no results message
-  if (noResults) {
-    noResults.style.display = "none"
+  if (fishNoResults) {
+    fishNoResults.style.display = "none"
   }
 
   // Render products
   filteredProducts.forEach((product, index) => {
     const productCard = createProductCard(product, index)
-    productsGrid.appendChild(productCard)
+    fishGoldProductsGrid.appendChild(productCard)
   })
 }
 
@@ -267,9 +268,6 @@ function createProductCard(product, index) {
                 <button class="btn-fish btn-fish-primary" onclick="viewProduct(${product.id})">
                     View Details
                 </button>
-                <button class="btn-fish btn-fish-secondary" onclick="addToWishlist(${product.id})">
-                    <i class="fas fa-heart"></i>
-                </button>
             </div>
         </div>
     `
@@ -289,17 +287,10 @@ function getCategoryName(category) {
   return categoryNames[category] || category
 }
 
-// Product actions (placeholder functions)
+// Product actions
 function viewProduct(productId) {
-  const product = fishGoldProducts.find((p) => p.id === productId)
-  if (product) {
-    alert(`Viewing details for: ${product.name}\n\nDescription: ${product.description}\nPrice: ${product.price}`)
-  }
+  // Redirect to product details page with the product ID in the query string
+  window.location.href = `product-details.html?id=${productId}`;
 }
 
-function addToWishlist(productId) {
-  const product = fishGoldProducts.find((p) => p.id === productId)
-  if (product) {
-    alert(`${product.name} added to wishlist!`)
-  }
-}
+
