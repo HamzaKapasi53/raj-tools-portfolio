@@ -112,28 +112,28 @@ const cyclePlusProducts = [
   },
   {
     id: 11,
-    name: "Granite Blade",
+    name: "Granite Rim Blade",
     category: "granite-blades",
     description: "Granite Rim Blade",
     price: "₹2,199",
     size: "4-inch",
     specs: ["Available in Sizes- 4'' | 5'' ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
-    image: "images/cycle_graniteblade_2.png",
+    image: "images/cycle_graniterimblade_1.png",
     badge: "Fine Finish",
   },
    {
-    id: 11,
-    name: "Granite Blade",
+    id: 12,
+    name: "Granite Turbo Blade",
     category: "granite-blades",
     description: "Granite Turbo Blade",
     price: "₹2,199",
     size: "4-inch",
     specs: ["Available in Sizes- 4'' | 5'' | 7'' ", "Hot-Pressed", "Wet Cutting","Marble & Granite"],
-    image: "images/cycle_graniteblade_3.png",
+    image: "images/cycle_graniteturboblade_1.png",
     badge: "Fine Finish",
   },
      {
-    id: 12,
+    id: 13,
     name: "Blue Granite Blade",
     category: "granite-blades",
     description: "110 X 1.8 X 20mm",
@@ -144,7 +144,7 @@ const cyclePlusProducts = [
     badge: "Fine Finish",
   }, 
   {
-    id: 13,
+    id: 14,
     name: "14-inch Granite Blade",
     category: "granite-blades",
     description: "350 X 12mm X 50mm Bore",
@@ -155,7 +155,7 @@ const cyclePlusProducts = [
     badge: "Fine Finish",
   },
     {
-    id: 14,
+    id: 15,
     name: "4-inch For Granite Blade",
     category: "granite-blades",
     description: "110 X 10 X 2.0 X 20mm",
@@ -166,7 +166,7 @@ const cyclePlusProducts = [
     badge: "Fine Finish",
   },
   {
-    id: 15,
+    id: 16,
      name: "Green Ceramic Zero Chipping Blade",
     category: "ceramic-blades",
     description: "105 X 1.4 X 8 X 20mm",
@@ -178,7 +178,7 @@ const cyclePlusProducts = [
   },
 
  {
-    id: 16,
+    id: 17,
      name: "Hexagonal Shank Chisel",
     category: "chisels",
     description: "Used for- tile, concrete, hollow bricks & stone",
@@ -189,7 +189,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 17,
+    id: 18,
      name: "SDS Max Chisel",
     category: "chisels",
     description: "Used for- tile, concrete, hollow bricks & stone",
@@ -200,7 +200,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
     {
-    id: 18,
+    id: 19,
      name: "PH65A Chisel",
     category: "chisels",
     description: "Used for- tile, concrete, hollow bricks & stone",
@@ -211,7 +211,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 19,
+    id: 20,
      name: " SDS PLUS Chisel  ",
     category: "chisels",
     description: "Used for- tile, concrete, hollow bricks & stone",
@@ -222,7 +222,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 20,
+    id: 21,
      name: " Glass Cutting Blade  ",
     category: "glass-blades",
     description: "100X20mm",
@@ -233,7 +233,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 21,
+    id: 22,
      name: "SDS Hammer Drill Bits",
     category: "drill-bits",
     description: "3 X 85 TO 25 X 460",
@@ -244,7 +244,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 22,
+    id: 23,
      name: "Multi-Purpose Drill Bits",
     category: "drill-bits",
     description: "Used for glass, concrete, ceramic and tiles",
@@ -255,7 +255,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 23,
+    id: 24,
      name: "Multi-Purpose Drill Bits",
     category: "drill-bits",
     description: "Used for glass, concrete, ceramic and tiles",
@@ -266,7 +266,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 24,
+    id: 25,
      name: "Multi-Purpose Cross Tipped Drill Bits",
     category: "drill-bits",
     description: "Used for glass, concrete, ceramic and tiles",
@@ -277,7 +277,7 @@ const cyclePlusProducts = [
     badge: "Premium",
   },
    {
-    id: 25,
+    id: 26,
      name: "Black Ceramic Zero Chipping Segment Blade",
     category: "ceramic-blades",
     description: "110 X 20/16mm",
