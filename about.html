@@ -1,3 +1,5 @@
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +8,600 @@
     <title>About Us - Raj Tools | Premium Cutting & Drilling Equipment</title>
     <meta name="description" content="Learn about Raj Tools - your trusted partner for premium cutting and drilling equipment. Discover our story, mission, and commitment to quality.">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/about-contact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #ffffff;
+            color: #1a1a1a;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* About Hero Section */
+        .about-hero {
+            position: relative;
+            padding: 10rem 2rem 5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 150%;
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 40%;
+            height: 80%;
+            background: linear-gradient(135deg, #0891b2 0%, #22d3d8 100%);
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+            border-radius: 50px;
+            color: #92400e;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-hero-title {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .about-hero-title .highlight {
+            background: linear-gradient(135deg, #dc2626, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero-description {
+            font-size: 1.15rem;
+            color: #475569;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 5rem 2rem;
+            background: #ffffff;
+        }
+
+        .story-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .story-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: #fef2f2;
+            color: #dc2626;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-content p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .stat-item {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #dc2626;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .story-image {
+            animation: slideInRight 0.8s ease-out;
+            position: relative;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 20px;
+            left: 20px;
+            border: 3px solid #dc2626;
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            animation: scaleIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .value-card:nth-child(1) { animation-delay: 0.1s; }
+        .value-card:nth-child(2) { animation-delay: 0.2s; }
+        .value-card:nth-child(3) { animation-delay: 0.3s; }
+        .value-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, #dc2626, #f59e0b);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .value-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-card p {
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Brands Section */
+        .brands-section {
+            padding: 5rem 2rem;
+            background: #ffffff;
+        }
+
+        .brands-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .brand-showcase {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .brand-showcase:nth-child(1) { animation-delay: 0.2s; }
+        .brand-showcase:nth-child(2) { animation-delay: 0.4s; }
+
+        .brand-showcase:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+        }
+
+        .brand-header {
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .brand-showcase.cycle .brand-header {
+            background: linear-gradient(135deg, #fef2f2, #fff7ed);
+            border-bottom: 1px solid #fecaca;
+        }
+
+        .brand-showcase.fish .brand-header {
+            background: linear-gradient(135deg, #ecfeff, #f0fdfa);
+            border-bottom: 1px solid #a5f3fc;
+        }
+
+        .brand-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: white;
+            padding: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .brand-showcase.cycle .brand-info h3 {
+            color: #dc2626;
+        }
+
+        .brand-showcase.fish .brand-info h3 {
+            color: #0891b2;
+        }
+
+        .brand-tagline {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .brand-body {
+            padding: 2rem;
+        }
+
+        .brand-body p {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .brand-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.6rem;
+        }
+
+        .brand-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #334155;
+            padding: 0.4rem 0;
+        }
+
+        .brand-showcase.cycle .brand-features li i {
+            color: #dc2626;
+        }
+
+        .brand-showcase.fish .brand-features li i {
+            color: #0891b2;
+        }
+
+        .brand-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .brand-showcase.cycle .brand-link {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .brand-showcase.fish .brand-link {
+            background: linear-gradient(135deg, #0891b2, #0e7490);
+        }
+
+        .brand-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .brand-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .brand-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #dc2626 0%, #f59e0b 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/banner.jpg') center/cover;
+            opacity: 0.1;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 3rem;
+            background: white;
+            color: #dc2626;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-hero-title {
+                font-size: 2.5rem;
+            }
+
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .about-hero-title {
+                font-size: 2rem;
+            }
+
+            .about-hero-description {
+                font-size: 1rem;
+            }
+
+            .story-content h2 {
+                font-size: 2rem;
+            }
+
+            .story-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .image-decoration {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="images/logorajtools.png" alt="" style="height: 46px;margin-top: 10px;">
-
-                <!-- <h2>Raj Tools</h2> -->
+                <img src="images/rajtoolslogo.jpg" alt="Raj Tools Logo" style="height: 46px;margin-top: 10px;">
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
@@ -36,45 +620,64 @@
 
     <!-- About Hero Section -->
     <section class="about-hero">
-        <div class="container">
-            <div class="about-hero-content">
-                <h1 class="about-hero-title">About Raj Tools</h1>
-                <p class="about-hero-description">
-                    Your trusted partner for premium cutting and drilling equipment since our inception. 
-                    We are committed to delivering the highest quality tools that professionals rely on.
+        <div class="about-hero-content">
+            <span class="hero-badge">
+                <i class="fas fa-building"></i> Our Story
+            </span>
+            <h1 class="about-hero-title">About <span class="highlight">Raj Tools</span></h1>
+            <p class="about-hero-description">
+                Your trusted partner for premium cutting and drilling equipment since our inception. 
+                We are committed to delivering the highest quality tools that professionals rely on.
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="story-content">
+                <span class="section-badge">Our Journey</span>
+                <h2>Building Trust Through Quality</h2>
+                <p>
+                    Raj Tools has been at the forefront of the cutting and drilling equipment industry, 
+                    providing professionals with the tools they need to get the job done right. Our journey 
+                    began with a simple mission: to offer the highest quality equipment at competitive prices.
                 </p>
+                <p>
+                    Today, we are proud to offer two premium brands - Cycle Plus and Fish Gold - each 
+                    designed to meet specific industry needs. From diamond saw blades to rotary hammers, 
+                    our comprehensive range ensures that you have the right tool for every application.
+                </p>
+                <div class="story-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Quality Products</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Premium Brands</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Quality Assured</span>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <div class="image-decoration"></div>
+                <img src="images/office.webp" alt="Raj Tools Workshop">
             </div>
         </div>
     </section>
 
-    <!-- About Content -->
-    <section class="about-content">
+    <!-- Values Section -->
+    <section class="values-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>
-                        Raj Tools has been at the forefront of the cutting and drilling equipment industry, 
-                        providing professionals with the tools they need to get the job done right. Our journey 
-                        began with a simple mission: to offer the highest quality equipment at competitive prices.
-                    </p>
-                    <p>
-                        Today, we are proud to offer two premium brands - Cycle Plus and Fish Gold - each 
-                        designed to meet specific industry needs. From diamond saw blades to rotary hammers, 
-                        our comprehensive range ensures that you have the right tool for every application.
-                    </p>
-                </div>
-                <div class="about-image">
-                    <img src="images/office.webp" alt="Raj Tools Workshop" onerror="this.src='images/placeholder-product.jpg'">
-                </div>
+            <div class="section-header">
+                <span class="section-badge">Our Values</span>
+                <h2 class="section-title">What We Stand For</h2>
+                <p class="section-description">Our core values guide everything we do, from product selection to customer service.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Mission & Values -->
-    <section class="mission-values">
-        <div class="container">
-            <h2 class="section-title">Our Mission & Values</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">
@@ -108,33 +711,76 @@
         </div>
     </section>
 
-    <!-- Our Brands -->
-    <section class="our-brands">
+    <!-- Brands Section -->
+    <section class="brands-section">
         <div class="container">
-            <h2 class="section-title">Our Brands</h2>
-            <div class="brands-showcase">
-                <div class="brand-showcase cycle-plus-showcase">
-                    <div class="brand-showcase-content">
-                        <h3>Cycle Plus</h3>
-                        <p>Premium cutting solutions including diamond saw blades, TCT blades, and ceramic blades. Designed for precision and durability in professional applications.</p>
-                        <a href="cycle-plus.html" class="brand-showcase-link">Explore Cycle Plus</a>
+            <div class="section-header">
+                <span class="section-badge">Our Brands</span>
+                <h2 class="section-title">Premium Tool Collections</h2>
+                <p class="section-description">Two industry-leading brands delivering exceptional performance for professionals.</p>
+            </div>
+            <div class="brands-grid">
+                <!-- Cycle Plus -->
+                <div class="brand-showcase cycle">
+                    <div class="brand-header">
+                        <div class="brand-logo">
+                            <img src="images/logocycleplus.png" alt="Cycle Plus Logo" onerror="this.parentElement.innerHTML='<i class=\'fas fa-cog\' style=\'font-size:2rem;color:#dc2626\'></i>'">
+                        </div>
+                        <div class="brand-info">
+                            <h3>Cycle Plus</h3>
+                            <span class="brand-tagline">Professional Cutting Solutions</span>
+                        </div>
                     </div>
-                    <div class="brand-showcase-image">
-                        <img src="images/logocycleplus.png" alt="">
-                        <!-- <img src="images/banner copy.jpg" alt="Cycle Plus Products" onerror="this.src='images/placeholder-product.jpg'"> -->
+                    <div class="brand-body">
+                        <p>Premium cutting solutions including diamond saw blades, TCT blades, and ceramic blades. Designed for precision and durability in professional applications.</p>
+                        <ul class="brand-features">
+                            <li><i class="fas fa-check-circle"></i> Ceramic Zero Chipping</li>
+                            <li><i class="fas fa-check-circle"></i> TCT Circular Saw Blades</li>
+                            <li><i class="fas fa-check-circle"></i> Diamond Cutting Blades</li>
+                            <li><i class="fas fa-check-circle"></i> Glass & Aluminium</li>
+                        </ul>
+                        <a href="cycle-plus.html" class="brand-link">
+                            Explore Cycle Plus <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="brand-showcase fish-gold-showcase">
-                    <div class="brand-showcase-content">
-                        <h3>Fish Gold</h3>
-                        <p>Heavy-duty drilling equipment including SDS hammer drill bits, chisels, and rotary hammers. Built for the toughest drilling applications.</p>
-                        <a href="fish-gold.html" class="brand-showcase-link">Explore Fish Gold</a>
+
+                <!-- Fish Gold -->
+                <div class="brand-showcase fish">
+                    <div class="brand-header">
+                        <div class="brand-logo">
+                            <img src="images/logofishgold.png" alt="Fish Gold Logo" onerror="this.parentElement.innerHTML='<i class=\'fas fa-fish\' style=\'font-size:2rem;color:#0891b2\'></i>'">
+                        </div>
+                        <div class="brand-info">
+                            <h3>Fish Gold</h3>
+                            <span class="brand-tagline">Heavy-Duty Drilling Equipment</span>
+                        </div>
                     </div>
-                    <div class="brand-showcase-image">
-                        <img src="images/logofishgold.png" alt="Fish Gold Products" style="height: 250px;" onerror="this.src='images/placeholder-product.jpg'">
+                    <div class="brand-body">
+                        <p>Heavy-duty drilling equipment including SDS hammer drill bits, chisels, and rotary hammers. Built for the toughest drilling applications.</p>
+                        <ul class="brand-features">
+                            <li><i class="fas fa-check-circle"></i> Ceramic Hot Pressed</li>
+                            <li><i class="fas fa-check-circle"></i> Diamond Cup Wheels</li>
+                            <li><i class="fas fa-check-circle"></i> Double Row Cup</li>
+                            <li><i class="fas fa-check-circle"></i> Professional Grade</li>
+                        </ul>
+                        <a href="fish-gold.html" class="brand-link">
+                            Explore Fish Gold <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-text">Browse our complete collection of premium cutting and drilling equipment or get in touch with us today.</p>
+            <a href="contact.html" class="cta-btn">
+                <i class="fas fa-phone"></i> Contact Us Today
+            </a>
         </div>
     </section>
 
@@ -158,9 +804,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>Email: <a href="mailto:huzaifa_kapasi@yahoo.co.in" style="color:white">huzaifa_kapasi@yahoo.co.in</a> </p>
+                    <p>Email: <a href="mailto:huzaifa_kapasi@yahoo.co.in" style="color:white">huzaifa_kapasi@yahoo.co.in</a></p>
                     <p>Phone: <a href="tel:+919821685901" style="color:white">+91 9821685901</a></p>
-                    <p>Address: Address: Office No. 5-A, 2nd Floor, Haji Mansion, 14, Sarang St, Khokha Bazar, Chippi Chawl, Kalbadevi, Mumbai, Maharashtra 400003</p>
+                    <p>Address: Office No. 5-A, 2nd Floor, Haji Mansion, 14, Sarang St, Khokha Bazar, Chippi Chawl, Kalbadevi, Mumbai, Maharashtra 400003</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -168,6 +814,7 @@
             </div>
         </div>
     </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>
