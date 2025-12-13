@@ -217,7 +217,7 @@ const cyclePlusProducts = [
     description: "Used for- tile, concrete, hollow bricks & stone",
     price: "₹120",
     size: "",
-    specs: ["314 X 250 FLAT",],
+    specs: ["14 X 250 FLAT",],
     image: "images/cycle_spcchisel_1.png",
     badge: "Premium",
   },
@@ -286,6 +286,16 @@ const cyclePlusProducts = [
     specs: ["Dry & Wet Cutting","Can cut any thickness of full body tiles"],
     image: "images/cycle_blackceramiczerochippingsegmentblade_1.png",
     badge: "New",
+  }, {
+    id: 27,
+     name: "Armatures & Stators",
+    category: "spare-parts",
+    description: "100% Copper & Double Insulated",
+    price: "₹XXX",
+    // size: "4-inch",
+    specs: ["CM4SA","6-100","DU-10","DW-801","Stators"],
+    image: "images/cycle_armatures&stators_1.png",
+    badge: "Premium",
   },
 ]
 
@@ -470,7 +480,9 @@ function getCategoryName(category) {
     "granite-blades":"Granite Blades",
     "glass-blades":"Glass Blades",
     // "sds-hammer-drill-bits":"SDS Hammer Drill Bits"
-    "drill-bits":"Drill Bits"
+    "drill-bits":"Drill Bits",
+    "spare-parts":"Spare Parts",
+    "chisels":"Chisels",
   }
   return categoryNames[category] || category
 }

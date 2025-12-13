@@ -273,7 +273,7 @@ body {
 }
 
 .brand-features li::before {
-  content: "✓";
+  /* content: "✓"; */
   position: absolute;
   left: 0;
   font-weight: bold;
